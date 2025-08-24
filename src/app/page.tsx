@@ -1,7 +1,6 @@
 import FeedbackForm from '@/components/global/Feedback-form'
 import Link from 'next/link'
 import React from 'react'
-import { HealthStatus } from '@/components/ui/health-status'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -55,7 +54,6 @@ const Home = () => {
 
       <div>
         <div className="fixed top-4 right-4 z-10 flex items-center gap-4">
-          <HealthStatus className="bg-white/10 backdrop-blur-sm px-3 py-2 rounded-lg" />
           <Link
             href="/admin"
             className="bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-lg hover:bg-white/20 transition-colors"
