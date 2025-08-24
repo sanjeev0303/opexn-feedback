@@ -1,0 +1,22 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Feedback {
+  id          String   @id @default(cuid())
+  name        String
+  email       String
+  rating      Int      @db.SmallInt
+  improvements String[] // Array of selected improvement areas
+  otherSuggestion String? // Optional other suggestion text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("feedbacks")
+}
